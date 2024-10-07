@@ -32,11 +32,7 @@ if 'pdf_ref' not in st.session_state:
     st.session_state.pdf_ref = None
 
 kalimat = [nlp.preprocessing(sentence) for sentence in sentences]
-st.write(kalimat)
-
-
-
-
+# st.write(kalimat)
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
