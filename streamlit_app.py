@@ -47,5 +47,6 @@ if prompt := st.chat_input():
 
     content = nlp.extract_data(sentences,prompt)
     msg = content
+    st.write("Similarity kata " + prompt)
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
