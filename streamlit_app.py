@@ -36,21 +36,6 @@ st.write(kalimat)
 
 
 
-query = "Python"
-
-vectorizer = TfidfVectorizer()
-X_tfidf = vectorizer.fit_transform(sentences)
-
-qry_vector = vectorizer.transform([query])
-cosine_similarities = cosine_similarity(qry_vector, X_tfidf)
-similarity_scores = cosine_similarities[0]
-sorted_indices = np.argsort(similarity_scores)[::-1]
-
-top_5_indices = sorted_indices[:5]
-st.write("Top 5 sentences similar to 'data':")
-for index in top_5_indices:
-    st.write(f"Document {index + 1}: {sentences[index]} (Similarity score: {similarity_scores[index]:2f})")
-
 
 
 for msg in st.session_state.messages:
@@ -60,6 +45,7 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    
+    content = nlp.extract_data(sentences,prompt)
+    msg = content
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
