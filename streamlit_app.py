@@ -19,8 +19,10 @@ sentences = [
 ]
 
 
-# with st.sidebar:
-#     st.write("Menu")
+with st.sidebar:
+    "[Pre-processing Result](https://platform.openai.com/account/api-keys)"
+    "[Extract Features](https://platform.openai.com/account/api-keys)"
+    "[Training Data](https://platform.openai.com/account/api-keys)"
 
 st.title("💬 Search Similarity")
 # st.caption("🚀 Mencari Kata yang similar")

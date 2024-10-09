@@ -31,13 +31,6 @@ class nlp:
         pos_tagged_tokens2 = pos_tag(lemmatizer_tokens)
 
         return '' .join(lemmatizer_tokens) 
-    
-        # return { 
-        #     "tokens": tokens,
-        #     "filtered_tokens": filtered_tokens,
-        #     "lemmatizer_tokens": lemmatizer_tokens,
-        #     "pos_tagged_tokens2": pos_tagged_tokens2,
-        # }
         
 
     def extract_data(sentences, query):
