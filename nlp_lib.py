@@ -17,7 +17,7 @@ class nlp:
         vdata = vdata.translate(vdata.maketrans("","", string.punctuation))
         tokens = word_tokenize(vdata)
         
-        # nltk.download('stopwords')
+        nltk.download('stopwords')
         stop_words = set(stopwords.words('english'))
         filtered_tokens = [word for word in tokens if word not in stop_words and word.isalnum()]
 
